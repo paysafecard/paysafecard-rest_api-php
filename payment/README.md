@@ -1,14 +1,5 @@
-# paysafecard payment api PHP class & examples
-
-## Basic procedure information
-1. First create a payment with the needed information (amount, currency, success_url, ...) you will receive an auth_url to redirect your customer to. Here the customer enters his PSC Card Information and proceeds with the payment.
-   On successful payment, the customer is redirect automatically to your provided success_url ( {payment_id} will be replaced with the actual payment id)
-
-2. Meanwhile the PSC API calls your notification_url. Here you should retrieve the payment information and if the payment is AUTHORIZED capture the payment and proceed with your actions (change payment status in your system and/or send a successful payment mail to the customer)
-
-3. If, for any reason, the notification request fails, put a fallback into your success_url script. Retrieve the payment and if the status is AUTHORIZED capture the payment and process your actions on success. As mentioned before, give positive feedback to the customer on success.
-
-4. If the customer cancels his payment he is automatically redirected to your failure_url. You do not have to call any mehtods in your failure script, since it is only a information site for a failed/canceled payment for your customer.
+# Paysafecard payment api PHP class & examples
+## currently developed under: psc.hosting-core.de
 
 ## minimal basic usage
 
