@@ -28,3 +28,4 @@ https://www.paysafecard.com/business/
 # Payout & Refund
 Not per default active. Special agreement with paysafecard necessary. 
 Please talk before the implementation with the paysafecard sales team. success@paysafecard.com
+ 
