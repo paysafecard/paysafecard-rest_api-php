@@ -132,21 +132,21 @@ class PaysafecardPaymentController
             "ip" => $customer_ip,
         );
         if ($country_restriction != "") {
-            array_push($customer, [
-                "country_restriction" => $country_restriction,
-            ]);
+            array_push($customer, 
+                "country_restriction", $country_restriction
+            );
         }
 
         if ($kyc_restriction != "") {
-            array_push($customer, [
-                "kyc_level" => $kyc_restriction,
-            ]);
+            array_push($customer,
+                "kyc_level", $kyc_restriction
+            );
         }
 
         if ($min_age != "") {
-            array_push($customer, [
-                "min_age" => $min_age,
-            ]);
+            array_push($customer,
+                "min_age" , $min_age
+            );
         }
 
         $jsonarray = array(
@@ -163,9 +163,9 @@ class PaysafecardPaymentController
         );
 
         if ($submerchant_id != "") {
-            array_push($jsonarray, [
-                "submerchant_id" => $submerchant_id,
-            ]);
+            array_push($jsonarray, 
+                "submerchant_id" , $submerchant_id
+            );
         }
 
         if ($correlation_id != "") {
