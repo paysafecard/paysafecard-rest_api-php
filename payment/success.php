@@ -108,7 +108,7 @@ if (isset($_GET["payment_id"])) {
                     //---------------------------------------//
                     printSucess($response, $pscpayment, $config['debug_level']);
                 } else {
-                    if ($error["number"] == 2017) {
+                    if ($response["number"] == 2017) {
                         // check with retrieve Payment details if the payment is successful or not
                         $response = $pscpayment->retrievePayment($id);
                         if ($config['logging']) {
