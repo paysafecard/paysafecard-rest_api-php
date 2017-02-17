@@ -9,6 +9,10 @@ class PaysafeLogger
 
     private $filename = "";
 
+    /**
+     * PaysafeLogger constructor.
+     * @param string $filename
+     */
     public function __construct($filename = "log.txt")
     {
         $this->filename = $filename;
@@ -20,7 +24,7 @@ class PaysafeLogger
      * @param mixed $request
      * @param mixed $http
      * @param mixed $response
-     * @return null
+     * @return void
      */
     public function log($request, $http, $response)
     {
