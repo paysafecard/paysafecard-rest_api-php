@@ -263,7 +263,7 @@ class PaysafecardRefundController
     }
 
     /**
-     * set environmente
+     * set environment
      * @return mixed
      */
     private function setEnvironment()
@@ -329,7 +329,7 @@ class PaysafecardRefundController
                 $this->response["message"] = 'Original payment transaction does not exist';
                 break;
             case 10028:
-                $this->response["message"] = 'One or more neccessary parameters are empty';
+                $this->response["message"] = 'One or more necessary parameters are empty';
                 break;
         }
         return $this->response;

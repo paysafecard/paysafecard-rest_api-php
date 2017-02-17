@@ -79,7 +79,7 @@ if (count($_POST) > 0) {
     // the customer ID (merchant client id)
     $customer_id = $_POST["customer_id"];
 
-    // the customers IP adress
+    // the customers IP address
     $customer_ip = $_SERVER['REMOTE_ADDR'];
 
     // the redirect url after a successful payment, the customer will be sent to this url on success

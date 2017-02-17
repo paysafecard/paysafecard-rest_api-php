@@ -8,7 +8,7 @@
 
 3. If, for any reason, the notification request fails, put a fallback into your success_url script. Retrieve the payment and if the status is AUTHORIZED capture the payment and process your actions on success. As mentioned before, give positive feedback to the customer on success.
 
-4. If the customer cancels his payment he is automatically redirected to your failure_url. You do not have to call any mehtods in your failure script, since it is only a information site for a failed/canceled payment for your customer.
+4. If the customer cancels his payment he is automatically redirected to your failure_url. You do not have to call any methods in your failure script, since it is only a information site for a failed/canceled payment for your customer.
 
 ## minimal basic usage
 
