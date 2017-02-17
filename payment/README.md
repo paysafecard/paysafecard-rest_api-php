@@ -14,14 +14,14 @@
 
 ```php
 // include the payment class
-include_once 'class-payment.php';
+include_once 'PaymentClass.php';
 
 // set necessary parameters
 $debug = true;
 $key = "psc_abcde-fg1234-5678h"; // use your own PSC key
 
 // create a new payment controller object
-$pscpayment = new PaysafecardPaymentController($key, true);
+$pscpayment = new PaysafecardPaymentController($key, "TEST");
 
 // define needed payment parameters
 
@@ -45,12 +45,12 @@ $pscpayment = new PaysafecardPaymentController($key, true);
 
         // your scripts notification URL, this url is called to notify your script a payment has been processed
         $notifyurl = "http://yourdomain.com/notification.php?action=notify&payment={payment_id}";
-
-// creating a payment and receive the response
-$response = $pscpayment->createPayment($amount, $currency, $customer_id, $customer_ip, $okurl, $errorurl, $notifyurl, $correlation_id);
-
-// handle the response
-if ($response == false) {
+        
+        // creating a payment and receive the response
+        $response = $pscpayment->createPayment($amount, $currency, $customer_id, $customer_ip, $okurl, $errorurl, $notifyurl, $correlation_id);
+        
+        // handle the response
+        if ($response == false) {
             $error = $pscpayment->getError();
             if ($debug == true) {
                 echo 'ERROR: ' . $error["number"] . '</strong> ' . $error["message"];
