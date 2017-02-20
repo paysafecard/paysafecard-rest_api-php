@@ -44,7 +44,7 @@ class JsonTable
     {
         if (!file_exists($_jsonFile)) {
             if ($create === true) {
-                $this->createTable($_jsonFile, true);
+                $this->createTable($_jsonFile);
             } else {
                 throw new Exception("JsonTable Error: Table not found: " . $_jsonFile);
             }
@@ -138,7 +138,7 @@ class JsonTable
         return $result;
     }
 
-    public function insert($data = array(), $create = false)
+    public function insert($data = array())
     {
         if (isset($data[0]) && substr_compare($data[0], $this->jsonFile, 0)) {
             $data = $data[1];

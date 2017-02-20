@@ -227,8 +227,8 @@ class PaysafecardPaymentController
     }
 
     /**
-     * set environmente
-     * @return bool
+     * set environment
+     * @return mixed
      */
     private function setEnvironment()
     {

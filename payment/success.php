@@ -74,7 +74,7 @@ if ($config['logging']) {
 // checking for actual action
 if (isset($_GET["payment_id"])) {
     $id = $_GET["payment_id"];
-    // get the current payment informations
+    // get the current payment information
     $response = $pscpayment->retrievePayment($id);
     if ($config['logging']) {
         $logger->log($pscpayment->getRequest(), $pscpayment->getCurl(), $pscpayment->getResponse());
@@ -86,7 +86,7 @@ if (isset($_GET["payment_id"])) {
     } else if (isset($response["object"])) {
         if ($response["status"] == "SUCCESS") {
             // transaction was successful, show customer a positive feedback. Do NOT process any actions here.
-            printSucess($response, $pscpayment, $config['debug_level']);
+            printSuccess($response, $pscpayment, $config['debug_level']);
         } else if ($response["status"] == "AUTHORIZED") {
             // capture payment
             $response = $pscpayment->capturePayment($id);
@@ -106,9 +106,9 @@ if (isset($_GET["payment_id"])) {
                      *  This is a fallback to notification.php
                      */
                     //---------------------------------------//
-                    printSucess($response, $pscpayment, $config['debug_level']);
+                    printSuccess($response, $pscpayment, $config['debug_level']);
                 } else {
-                    if ($error["number"] == 2017) {
+                    if ($response["number"] == 2017) {
                         // check with retrieve Payment details if the payment is successful or not
                         $response = $pscpayment->retrievePayment($id);
                         if ($config['logging']) {
@@ -119,7 +119,7 @@ if (isset($_GET["payment_id"])) {
 
                             if ($response["status"] == "SUCCESS") {
                                 // transaction was successful, show customer a positive feedback. Do NOT process any actions here.
-                                printSucess($response, $pscpayment, $config['debug_level']);
+                                printSuccess($response, $pscpayment, $config['debug_level']);
 
                             } else {
                                 printError($pscpayment, $config['debug_level'], $id);
@@ -153,7 +153,7 @@ function getURL()
 
 // Print errors
 
-function printError($pscClass, $debugLevel, $id)
+function printError(PaysafecardPaymentController $pscClass, $debugLevel, $id)
 {
     $error = $pscClass->getError();
     if ($debugLevel == 0) {
@@ -198,7 +198,7 @@ function printError($pscClass, $debugLevel, $id)
     }
 }
 
-function printSucess($response, $pscClass, $debugLevel)
+function printSuccess($response, PaysafecardPaymentController $pscClass, $debugLevel)
 {
     if ($debugLevel == 0) {
         echo '
@@ -235,5 +235,3 @@ function printSucess($response, $pscClass, $debugLevel)
     }
 
 }
-
-?>

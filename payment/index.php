@@ -79,7 +79,7 @@ if (count($_POST) > 0) {
     // the customer ID (merchant client id)
     $customer_id = $_POST["customer_id"];
 
-    // the customers IP adress
+    // the customers IP address
     $customer_ip = $_SERVER['REMOTE_ADDR'];
 
     // the redirect url after a successful payment, the customer will be sent to this url on success
@@ -174,6 +174,7 @@ if (count($_POST) > 0) {
     } else if (isset($response["object"])) {
         if (isset($response["redirect"])) {
             header("Location: " . $response["redirect"]['auth_url']);
+            exit;
         }
     }
 }
@@ -229,10 +230,8 @@ if (count($_POST) > 0) {
                     Pay by simply entering the 16-digit paysafecard PIN or sign up for your personal my paysafecard payments account, top it up with your PINs and pay with just your username and password.
                 </p>
                 <p>
-                    More information is available at <a href="http://www.paysafecard.com" target="_blank"> www.paysafecard.com </a>
+                    More information is available at <a href="https://www.paysafecard.com" target="_blank"> www.paysafecard.com </a>
                 </p>
-            </p>
-
             </div>
 
         </div>
@@ -253,5 +252,3 @@ function getURL()
     $protocol = substr($sp, 0, strpos($sp, "/")) . $s;
     return $protocol . "://" . $_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']);
 }
-
-?>
