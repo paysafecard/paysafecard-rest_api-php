@@ -118,7 +118,7 @@ if (isset($_POST["action"])) {
         $last_name = $_POST["last_name"];
         // birthday of customer
         $birthday = $_POST["birthday"];
-        // ip adress of customer
+        // ip address of customer
         $customer_ip = $_SERVER['REMOTE_ADDR'];
 
         // execute payout
@@ -151,7 +151,7 @@ if (isset($_POST["action"])) {
         $currency = $_POST["currency"];
         // merchant client id
         $merchantclientid = $_POST["merchantclientid"];
-        // custumers mail (psc)
+        // customers mail (psc)
         $customer_mail = $_POST["customer_mail"];
         // first name of customer
         $first_name = $_POST["first_name"];
@@ -378,7 +378,7 @@ function printSucess($response, $pscClass, $debugLevel, $type)
                 <div class="alert alert-success" role="alert">
                     <p>The payout request was successful!</p>
                     <p>PayoutID: ' . $response["id"] . '</p>
-                    <p>The amount of ' . $response["amount"] . ' ' . $response["currency"] . ' was transfared to the my paysafecard account ' . $response["customer"]["email"] . '
+                    <p>The amount of ' . $response["amount"] . ' ' . $response["currency"] . ' was transferred to the my paysafecard account ' . $response["customer"]["email"] . '
                 </div>';
         }
 
@@ -395,7 +395,7 @@ function printSucess($response, $pscClass, $debugLevel, $type)
                 <div class="alert alert-success" role="alert">
                     <p>The payout request was successful!</p>
                     <p>PayoutID: ' . $response["id"] . '</p>
-                    <p>The amount of ' . $response["amount"] . ' ' . $response["currency"] . ' was transfared to the my paysafecard account ' . $response["customer"]["email"] . '
+                    <p>The amount of ' . $response["amount"] . ' ' . $response["currency"] . ' was transferred to the my paysafecard account ' . $response["customer"]["email"] . '
                 </div>';
         }
     }

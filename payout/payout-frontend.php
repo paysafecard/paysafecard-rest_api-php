@@ -96,7 +96,7 @@ if (isset($_POST["action"])) {
             $logger->log($pscpayout->getRequest(), $pscpayout->getCurl(), $pscpayout->getResponse());
         }
 
-        // reponse handling
+        // response handling
         if ($response == false) {
             $error = $pscpayout->getError();
             printError($pscpayout, $config['debug_level']);

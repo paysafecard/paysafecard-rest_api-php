@@ -74,7 +74,7 @@ if ($config['logging']) {
 // checking for actual action
 if (isset($_GET["payment_id"])) {
     $id = $_GET["payment_id"];
-    // get the current payment informations
+    // get the current payment information
     $response = $pscpayment->retrievePayment($id);
     if ($config['logging']) {
         $logger->log($pscpayment->getRequest(), $pscpayment->getCurl(), $pscpayment->getResponse());
