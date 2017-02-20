@@ -21,12 +21,11 @@ class PaysafecardPaymentController
 
     /**
      * send curl request
-     * @param assoc array $curlparam
-     * @param httpmethod $method
-     * @param string array $header
-     * @return null
+     * @param array $curlparam
+     * @param string $method
+     * @param array $headers
+     * @return void
      */
-
     private function doRequest($curlparam, $method, $headers = array())
     {
         $ch = curl_init();
@@ -92,7 +91,7 @@ class PaysafecardPaymentController
 
     /**
      * get the request
-     * @return mixed request
+     * @return array
      */
     public function getRequest()
     {
@@ -101,28 +100,30 @@ class PaysafecardPaymentController
 
     /**
      * get curl
-     * @return mixed curl
+     * @return array
      */
     public function getCurl()
     {
         return $this->curl;
     }
 
-/**
- * create a payment
- * @param double $amount
- * @param string $currency
- * @param string $customer_id
- * @param string $customer_ip
- * @param string $success_url
- * @param string $failure_url
- * @param string $notification_url
- * @param string|double $correlation_id
- * @param string|countrycode $country_restriction
- * @param int $min_age
- * @param int $shop_id
- * @return mixed|response
- */
+    /**
+     * create a payment
+     * @param double $amount
+     * @param string $currency
+     * @param string $customer_id
+     * @param string $customer_ip
+     * @param string $success_url
+     * @param string $failure_url
+     * @param string $notification_url
+     * @param string|double $correlation_id
+     * @param string $country_restriction
+     * @param string $kyc_restriction
+     * @param int|string $min_age
+     * @param int|string $shop_id
+     * @param string $submerchant_id
+     * @return array|bool
+     */
     public function createPayment($amount, $currency, $customer_id, $customer_ip, $success_url, $failure_url, $notification_url, $correlation_id = "", $country_restriction = "", $kyc_restriction = "", $min_age = "", $shop_id = "", $submerchant_id = "")
     {
         $amount = str_replace(',', '.', $amount);
@@ -183,7 +184,7 @@ class PaysafecardPaymentController
     /**
      * get the payment id
      * @param string $payment_id
-     * @return response|bool
+     * @return array|bool
      */
     public function capturePayment($payment_id)
     {
@@ -202,9 +203,8 @@ class PaysafecardPaymentController
     /**
      * retrieve a payment
      * @param string $payment_id
-     * @return response|bool
+     * @return array|bool
      */
-
     public function retrievePayment($payment_id)
     {
         $this->url = $this->url . $payment_id;
@@ -219,9 +219,8 @@ class PaysafecardPaymentController
 
     /**
      * get the response
-     * @return mixed
+     * @return array
      */
-
     public function getResponse()
     {
         return $this->response;
@@ -241,13 +240,13 @@ class PaysafecardPaymentController
             echo "Environment not supported";
             return false;
         }
+        return true;
     }
 
     /**
      * get error
-     * @return response
+     * @return array
      */
-
     public function getError()
     {
         if (!isset($this->response["number"])) {
