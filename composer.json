@@ -34,7 +34,7 @@
         "files":[
             "payment/PaymentClass.php",
             "payment/PayoutClass.php",
-            "payment/RefundClass.php",
+            "payment/RefundClass.php"
         ]
     }
 }
