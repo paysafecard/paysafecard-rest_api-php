@@ -55,7 +55,7 @@ $pscpayment = new PaysafecardPaymentController($key, "TEST");
             if ($debug == true) {
                 echo 'ERROR: ' . $error["number"] . '</strong> ' . $error["message"];
             } else {
-                if (($error["number"] == 4003) || ($error["number"] == 4003)) {
+                if (($error["number"] == 403) || ($error["number"] == 4003)) {
                     echo '<strong>ERROR: ' . $error["number"] . '</strong> ' . $error["message"];
                 } else {
                     echo 'Transaction could not be initiated due to connection problems. If the problem persists, please contact our support.';
