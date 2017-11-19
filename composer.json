@@ -1,28 +1,33 @@
 {
     "name": "TS3Tools/paysafecard-rest_api-php",
     "description": "paysafecard PHP REST API Library",
-    "license": "MIT",
     "type": "library",
+    "license": "MIT",
     "keywords": ["payment", "paysafecard", "prepaid payment method", "prepaid solution"],
     "homepage": "https://www.paysafecard.com/",
-    "support": {
+	"support": {
         "email": "techsupport@paysafecard.com",
         "issues": "https://github.com/paysafecard/paysafecard-rest_api-php/issues"
+    },
+    "require": {
+        "php": ">=5.0.0"
     },
     "authors": [
         {
             "name": "Sebastian Krätzig",
-            "email": "info@4g-server.eu"
+            "homepage": "https://www.4g-server.eu",
+            "role": "Business Customer"
+        },
+        {
+            "name": "GitHub Contributors",
+            "homepage": "https://github.com/paysafecard/paysafecard-rest_api-php/graphs/contributors",
+            "role": "Developer"
         }
     ],
-    "require": {
-        "php": ">=5.6.0",
-		    "TS3Tools/paysafecard-rest_api-php": "master"
-    },
-	  "repositories": [
+    "repositories": [
         {
             "type": "vcs",
             "url": "https://github.com/TS3Tools/paysafecard-rest_api-php"
         }
-    ],
+    ]
 }
