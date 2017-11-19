@@ -5,7 +5,7 @@
     "license": "MIT",
     "keywords": ["payment", "paysafecard", "prepaid payment method", "prepaid solution"],
     "homepage": "https://www.paysafecard.com/",
-	"support": {
+    "support": {
         "email": "techsupport@paysafecard.com",
         "issues": "https://github.com/paysafecard/paysafecard-rest_api-php/issues"
     },
@@ -15,7 +15,7 @@
     "authors": [
         {
             "name": "Sebastian Krätzig",
-            "homepage": "https://www.4g-server.eu",
+            "email": "info@4g-server.eu",
             "role": "Business Customer"
         },
         {
