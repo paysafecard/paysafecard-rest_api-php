@@ -29,5 +29,12 @@
             "type": "vcs",
             "url": "https://github.com/paysafecard/paysafecard-rest_api-php"
         }
-    ]
+    ],
+    "autoload": {
+        "files":[
+            "payment/PaymentClass.php",
+            "payment/PayoutClass.php",
+            "payment/RefundClass.php",
+        ]
+    }
 }
