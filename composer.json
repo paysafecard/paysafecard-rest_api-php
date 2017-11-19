@@ -1,5 +1,5 @@
 {
-    "name": "TS3Tools/paysafecard-rest_api-php",
+    "name": "paysafecard/paysafecard-rest_api-php",
     "description": "paysafecard PHP REST API Library",
     "type": "library",
     "license": "MIT",
@@ -10,7 +10,7 @@
         "issues": "https://github.com/paysafecard/paysafecard-rest_api-php/issues"
     },
     "require": {
-        "php": ">=5.0.0"
+        "php": ">=5.6.0"
     },
     "authors": [
         {
@@ -27,7 +27,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/TS3Tools/paysafecard-rest_api-php"
+            "url": "https://github.com/paysafecard/paysafecard-rest_api-php"
         }
     ]
 }
