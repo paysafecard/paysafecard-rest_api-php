@@ -10,6 +10,12 @@ You can find the full documentation and payment flow of the paysafecard APIs her
 EN: https://www.paysafecard.com/fileadmin/api/
 DE: https://www.paysafecard.com/fileadmin/api/de.html
 
+# Installation
+You can either install the REST API by manually downloading it or using Composer:
+```bash
+composer require paysafecard/paysafecard-rest_api-php
+```
+
 # Integration
 How to integrate paysafecards API:
 1. Register for a business account. https://servicecenter.paysafecard.com/merchant-center/webToLead/WebToLeadForm.xhtml
