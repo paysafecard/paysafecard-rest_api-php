@@ -1,0 +1,40 @@
+{
+    "name": "paysafecard/paysafecard-rest_api-php",
+    "description": "paysafecard PHP REST API Library",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["payment", "paysafecard", "prepaid payment method", "prepaid solution"],
+    "homepage": "https://www.paysafecard.com/",
+    "support": {
+        "email": "techsupport@paysafecard.com",
+        "issues": "https://github.com/paysafecard/paysafecard-rest_api-php/issues"
+    },
+    "require": {
+        "php": ">=5.6.0"
+    },
+    "authors": [
+        {
+            "name": "Sebastian Krätzig",
+            "email": "info@4g-server.eu",
+            "role": "Business Customer"
+        },
+        {
+            "name": "GitHub Contributors",
+            "homepage": "https://github.com/paysafecard/paysafecard-rest_api-php/graphs/contributors",
+            "role": "Developer"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/paysafecard/paysafecard-rest_api-php"
+        }
+    ],
+    "autoload": {
+        "files":[
+            "payment/PaymentClass.php",
+            "payment/PayoutClass.php",
+            "payment/RefundClass.php"
+        ]
+    }
+}
