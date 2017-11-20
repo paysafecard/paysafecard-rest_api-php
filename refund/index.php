@@ -60,7 +60,7 @@ include_once "config.php";
 $correlation_id = "testCorrID_" . uniqid();
 
 // create new Refund Controller
-$pscrefund = new PaysafecardRefundController($config['psc_key'], $config['environment']);
+$pscrefund = new PaysafecardRefundController($config['psc_key'], $config['sandbox']);
 if ($config['logging']) {
     $logger = new PaysafeLogger();
 }
