@@ -61,7 +61,7 @@ include_once "config.php";
 $correlation_id = "testCorrID_" . uniqid();
 
 // create new Payment Controller
-$pscpayment = new PaysafecardPaymentController($config['psc_key'], $config['environment']);
+$pscpayment = new PaysafecardPaymentController($config['psc_key'], $config['sandbox']);
 
 if ($config['logging']) {
     $logger = new PaysafeLogger();
