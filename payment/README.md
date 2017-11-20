@@ -21,7 +21,7 @@ $debug = true;
 $key = "psc_abcde-fg1234-5678h"; // use your own PSC key
 
 // create a new payment controller object
-// set second parameter to `true`, if you want to use the sandbox API
+// set second parameter to `false`, if you want to use the production API
 $pscpayment = new PaysafecardPaymentController($key, true);
 
 // define needed payment parameters
