@@ -30,14 +30,14 @@ $config = [
     'logging'     => true,
 
     /*
-     * Environment
-     * set the systems environment.
+     * Sandbox
+     * enable the sandbox for testing.
      * Possible Values are:
-     * TEST = Test environment
-     * PRODUCTION = Productive Environment
+     * true = Test environment
+     * false = Productive Environment
      *
      */
 
-    'environment' => "TEST",
+    'sandbox' => true,
 
 ];
