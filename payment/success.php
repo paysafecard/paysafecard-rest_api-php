@@ -66,7 +66,7 @@ include_once "PaysafeLogger.php";
 include_once "config.php";
 
 // create new Payment Controller
-$pscpayment = new PaysafecardPaymentController($config['psc_key'], $config['environment']);
+$pscpayment = new PaysafecardPaymentController($config['psc_key'], $config['sandbox']);
 if ($config['logging']) {
     $logger = new PaysafeLogger();
 }
