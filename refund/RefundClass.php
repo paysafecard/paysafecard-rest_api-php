@@ -10,12 +10,12 @@ class PaysafecardRefundController
     private $curl;
     private $key         = "";
     private $url         = "";
-    private $environment = 'TEST';
+    private $sandbox = true;
 
-    public function __construct($key = "", $environment = "TEST")
+    public function __construct($key = "", $sandbox = true)
     {
         $this->key         = $key;
-        $this->environment = $environment;
+        $this->sandbox = $sandbox;
         $this->setEnvironment();
     }
 
@@ -268,14 +268,15 @@ class PaysafecardRefundController
      */
     private function setEnvironment()
     {
-        if ($this->environment == "TEST") {
+        if ($this->sandbox) {
             $this->url = "https://apitest.paysafecard.com/v1/payments/";
-        } else if ($this->environment == "PRODUCTION") {
+        } else if (!$this->sandbox) {
             $this->url = "https://api.paysafecard.com/v1/payments/";
         } else {
-            echo "Environment not supported";
+            echo "Environment '$this->sandbox' not supported. Please set it to 'true' or 'false'.";
             return false;
         }
+        return true;
     }
 
     /**
