@@ -270,7 +270,7 @@ class PaysafecardPaymentController
                 $this->response["message"] = 'The amount for this transaction exceeds the maximum amount. The maximum amount is 1000 EURO (equivalent in other currencies)';
                 break;
             case 3001:
-                $this->response["message"] = 'Transaction could not be initiated because the account is inactive.';
+                $this->response["message"] = 'Transaction could not be initiated due to connection problems. If the problem persists, please contact our support.';
                 break;
             case 2002:
                 $this->response["message"] = 'payment id is unknown.';
