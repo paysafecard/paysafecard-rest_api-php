@@ -22,8 +22,8 @@ $pscpayment = new PaysafecardPaymentController($config['psc_key'], $config['envi
 $logger     = new PaysafeLogger();
 
 // checking for actual action
-if (isset($_GET["payment_id"])) {
-    $id = $_GET["payment_id"];
+if (isset($_GET["mtid"])) {
+    $id = $_GET["mtid"];
     // get payment status with retrieve Payment details
     $response = $pscpayment->retrievePayment($id);
     $logger->log($pscpayment->getRequest(), $pscpayment->getCurl(), $pscpayment->getResponse());
