@@ -52,7 +52,7 @@ class PaysafecardPaymentController
         curl_setopt($ch, CURLOPT_PORT, 443);
         curl_setopt($ch, CURLOPT_TIMEOUT, 60);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HEADER, false);
 
@@ -124,7 +124,7 @@ class PaysafecardPaymentController
      * @param string $submerchant_id
      * @return array|bool
      */
-    public function createPayment($amount, $currency, $customer_id, $customer_ip, $success_url, $failure_url, $notification_url, $correlation_id = "", $country_restriction = "", $kyc_restriction = "", $min_age = "", $shop_id = "", $submerchant_id = "")
+    public function createPayment($amount, $currency, $customer_id, $customer_ip, $success_url, $failure_url, $notification_url, $correlation_id = "", $country_restriction = "", $kyc_restriction = "", $min_age = "", $shop_id = "", $submerchant_id = "", $card_restrictions = "")
     {
         $amount = str_replace(',', '.', $amount);
 
@@ -133,21 +133,15 @@ class PaysafecardPaymentController
             "ip" => $customer_ip,
         );
         if ($country_restriction != "") {
-            array_push($customer, 
-                "country_restriction", $country_restriction
-            );
+            $customer["country_restriction"] = $country_restriction;
         }
 
         if ($kyc_restriction != "") {
-            array_push($customer,
-                "kyc_level", $kyc_restriction
-            );
+            $customer["kyc_level"] = $kyc_restriction;
         }
 
         if ($min_age != "") {
-            array_push($customer,
-                "min_age" , $min_age
-            );
+            $customer["min_age"] = $min_age;
         }
 
         $jsonarray = array(
@@ -164,9 +158,11 @@ class PaysafecardPaymentController
         );
 
         if ($submerchant_id != "") {
-            array_push($jsonarray, 
-                "submerchant_id" , $submerchant_id
-            );
+            $jsonarray["submerchant_id"] = $submerchant_id;
+        }
+
+        if ($card_restrictions != "") {
+            $jsonarray["restrictions"] = $card_restrictions;
         }
 
         if ($correlation_id != "") {
